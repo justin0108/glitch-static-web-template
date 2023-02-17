@@ -1,12 +1,17 @@
-on: push
+name: Glitch Sync
+
+# Glitch Project: https://glitch.com/edit/#!/github-action
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  git-sync:
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - name: git-sync
-        uses: wei/git-sync@v3
+      - name: Sync to Glitch Project
+        uses: kanadgupta/glitch-sync@main
         with:
-          source_repo: "https://github.com/justin0108/glitch-static-web-template.git"
-          source_branch: "main"
-          destination_repo: ${{ secrets.GLITCH_GIT_URL }}
-          destination_branch: "main"
+          auth-token: '${{ secrets.AUTHTOKEN }}'
+          project-id: '${{ secrets.PROJECTID }}'
