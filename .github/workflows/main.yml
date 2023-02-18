@@ -16,5 +16,5 @@ jobs:
           SOURCE_REPO: "justin0108%2Fglitch-static-web-template"
         run: |
           curl -X POST \
-          -H "authorization: $AUTHTOKEN" \
-          https://api.glitch.com/project/githubImport?projectId=$PROJECTID&repo=$SOURCE_REPO
+          -H "authorization: ${AUTHTOKEN}" \
+          https://api.glitch.com/project/githubImport?projectId=${PROJECTID}&repo=${SOURCE_REPO}
