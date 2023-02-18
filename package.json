@@ -16,10 +16,6 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/justin0108/glitch-static-web-template/issues"
-  },
-  "homepage": "https://github.com/justin0108/glitch-static-web-template#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
