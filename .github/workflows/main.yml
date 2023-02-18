@@ -1,3 +1,21 @@
+name: Glitch Sync
+
+# Glitch Project: https://glitch.com/edit/#!/github-action
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Glitch Project
+        uses: kanadgupta/glitch-sync@main
+        with:
+          auth-token: '${{ secrets.AUTHTOKEN }}'
+          project-id: '${{ secrets.PROJECTID }}'
+
 name: Native Glitch Sync
 
 on:
@@ -6,7 +24,7 @@ on:
       - main
 
 jobs:
-  my-job:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Call Glitch API endpoint
