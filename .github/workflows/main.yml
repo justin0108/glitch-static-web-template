@@ -9,8 +9,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to Glitch Project
-        uses: kanadgupta/glitch-sync@main
-        with:
-          auth-token: '${{ secrets.AUTHTOKEN }}'
-          project-id: '${{ secrets.PROJECTID }}'
+    - name: Call Glitch API endpoint
+      env:
+        AUTHTOKEN: ${{ secrets.AUTHTOKEN }}
+        PROJECTID: ${{ secrets.PROJECTID }}
+        SOURCE_REPO: "justin0108%2Fglitch-static-web-template"
+      run: |
+        curl -X POST \
+        -H "authorization: $AUTHTOKEN" \
+        https://api.glitch.com/project/githubImport?projectId=$PROJECTID&repo=$SOURCE_REPO
