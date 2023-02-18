@@ -17,6 +17,4 @@ jobs:
         run: |
           echo ${PROJECTID}
           echo $PROJECTID
-          curl -X POST \
-          -H "authorization: ${AUTHTOKEN}" \
-          https://api.glitch.com/project/githubImport?projectId=${PROJECTID}&repo=${SOURCE_REPO}
+          curl -X POST -H "authorization: ${AUTHTOKEN}" https://api.glitch.com/project/githubImport?projectId=${PROJECTID}&repo=${SOURCE_REPO}
