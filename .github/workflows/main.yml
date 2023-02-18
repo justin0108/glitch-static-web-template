@@ -15,6 +15,7 @@ jobs:
           PROJECTID: ${{ secrets.PROJECTID }}
           SOURCE_REPO: "justin0108%2Fglitch-static-web-template"
         run: |
+          echo ${PROJECTID}
           curl -X POST \
           -H "authorization: ${AUTHTOKEN}" \
           https://api.glitch.com/project/githubImport?projectId=${PROJECTID}&repo=${SOURCE_REPO}
